@@ -32,7 +32,10 @@
     });
 
     floatTop.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        var target = document.getElementById('articles');
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 
     var fadeElements = document.querySelectorAll(
