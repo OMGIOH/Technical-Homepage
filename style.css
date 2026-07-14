@@ -579,6 +579,32 @@ a:hover {
     transform: translateY(-3px);
 }
 
+#music-toggle {
+    background: var(--bg-card);
+    border: 1px solid var(--border-strong);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+#music-toggle:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+#music-toggle.playing {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
 /* ============== Section Tag (breadcrumb) ============== */
 .section-tag {
     position: absolute;

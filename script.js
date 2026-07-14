@@ -23,6 +23,38 @@
 
     themeToggle.addEventListener('click', toggleTheme);
 
+    var musicToggle = document.getElementById('music-toggle');
+    var bgMusic = document.getElementById('bg-music');
+    var isPlaying = false;
+
+    function toggleMusic() {
+        if (isPlaying) {
+            bgMusic.pause();
+            musicToggle.classList.remove('playing');
+            musicToggle.innerHTML = '<i class="fas fa-music"></i>';
+        } else {
+            bgMusic.play().catch(function(e) {
+                console.log('Auto-play prevented:', e);
+            });
+            musicToggle.classList.add('playing');
+            musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+        }
+        isPlaying = !isPlaying;
+    }
+
+    musicToggle.addEventListener('click', toggleMusic);
+
+    // 尝试自动播放
+    window.addEventListener('load', function() {
+        bgMusic.play().then(function() {
+            isPlaying = true;
+            musicToggle.classList.add('playing');
+            musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+        }).catch(function(e) {
+            console.log('Auto-play prevented by browser:', e);
+        });
+    });
+
     window.addEventListener('scroll', function () {
         if (window.scrollY > 500) {
             floatTop.classList.add('visible');

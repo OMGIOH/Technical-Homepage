@@ -84,7 +84,7 @@
                     <p class="pipeline-stage-name">BERT-CRF 模型训练</p>
                     <p class="pipeline-stage-name-en">BERT-CRF Model Training</p>
                     <p class="pipeline-stage-desc">
-                        针对少数民族语言文本属于低资源语言、缺乏公开标注数据的困境，以 bert-base-chinese 为基础预训练模型，在领域语料上进行 MLM（掩码语言模型）继续预训练实现领域适应，使模型能够理解古话语境中的特殊表达与语义结构。微调阶段引入 CRF 层进行序列解码，对实体边界施加全局约束。预先定义四类实体标签（人物 PER、地点 LOC、器物 OBJ、仪式 RIT），构建实体字典与消歧规则辅助标注，模型在 9415 句语料上训练，五折交叉验证 F1 值达 0.9712。
+                        由于实验中少数民族语料资源较少，特此进行针对低资源语言场景下的模型训练。以 bert-base-chinese 为基础预训练模型，在领域语料上进行 MLM（掩码语言模型）继续预训练实现领域适应，使模型能够理解古话语境中的特殊表达与语义结构。微调阶段引入 CRF 层进行序列解码，对实体边界施加全局约束。预先定义四类实体标签（人物 PER、地点 LOC、器物 OBJ、仪式 RIT），构建实体字典与消歧规则辅助标注，模型在 9415 句语料上训练，五折交叉验证 F1 值达 0.9712。
                     </p>
                 </div>
                 <div class="pipeline-stage">
@@ -297,13 +297,20 @@
     </footer>
 
     <div id="floating-controls">
-        <button id="float-top" aria-label="回到顶部">
+        <button id="float-top" aria-label="回到目录">
             <i class="fas fa-arrow-up"></i>
+        </button>
+        <button id="music-toggle" aria-label="播放/暂停音乐">
+            <i class="fas fa-music"></i>
         </button>
         <button id="theme-toggle" aria-label="切换主题">
             <i class="fas fa-sun"></i>
         </button>
     </div>
+
+    <audio id="bg-music" loop>
+        <source src="music/181427154-1-208.mp3" type="audio/mpeg">
+    </audio>
 
     <script src="script.js"></script>
 </body>
