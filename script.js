@@ -49,36 +49,6 @@
 
     musicToggle.addEventListener('click', toggleMusic);
 
-    // 尝试自动播放
-    window.addEventListener('load', function() {
-        bgMusic.play().then(function() {
-            isPlaying = true;
-            musicToggle.classList.add('playing');
-            musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
-        }).catch(function(e) {
-            console.log('Auto-play prevented by browser:', e);
-        });
-    });
-
-    // 浏览器策略阻止自动播放时，监听用户首次交互触发播放
-    function playOnFirstInteraction() {
-        if (!isPlaying) {
-            bgMusic.play().then(function() {
-                isPlaying = true;
-                musicToggle.classList.add('playing');
-                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
-            }).catch(function(e) {
-                console.log('Playback still prevented:', e);
-            });
-        }
-        document.removeEventListener('click', playOnFirstInteraction);
-        document.removeEventListener('touchstart', playOnFirstInteraction);
-        document.removeEventListener('keydown', playOnFirstInteraction);
-    }
-    document.addEventListener('click', playOnFirstInteraction);
-    document.addEventListener('touchstart', playOnFirstInteraction);
-    document.addEventListener('keydown', playOnFirstInteraction);
-
     window.addEventListener('scroll', function () {
         if (window.scrollY > 500) {
             floatTop.classList.add('visible');
