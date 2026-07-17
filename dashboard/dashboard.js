@@ -1,4 +1,4 @@
-﻿(function () {
+﻿﻿﻿(function () {
     var chartsInitialized = false;
     var charts = {};
 
