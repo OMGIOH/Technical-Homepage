@@ -1,4 +1,4 @@
-﻿﻿﻿(function () {
+﻿﻿(function () {
     var chartsInitialized = false;
     var charts = {};
 
@@ -494,6 +494,27 @@
             });
         },5000);
     }
+
+    function reinitCharts() {
+        var keys = Object.keys(charts);
+        keys.forEach(function(k){
+            if(charts[k]){
+                charts[k].dispose();
+                delete charts[k];
+            }
+        });
+        chartsInitialized = false;
+        initDashboard();
+    }
+
+    var themeMO = new MutationObserver(function(mutations){
+        mutations.forEach(function(m){
+            if(m.attributeName === 'data-theme'){
+                reinitCharts();
+            }
+        });
+    });
+    themeMO.observe(document.documentElement, {attributes:true});
 
     var observer = new IntersectionObserver(function(entries){
         entries.forEach(function(entry){
