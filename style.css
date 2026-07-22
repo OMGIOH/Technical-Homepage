@@ -286,19 +286,20 @@ a:hover {
     margin-bottom: 1.25rem;
 }
 
-.hero-name {
-    font-size: clamp(4.32rem, 11.52vw, 7.92rem);
+.hero-name-zh {
+    font-family: 'Zhi Mang Xing', cursive;
+    font-size: clamp(5.4rem, 14vw, 9.6rem);
     font-weight: 400;
-    font-style: italic;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.08em;
     color: var(--text);
     background: linear-gradient(135deg, var(--text) 0%, var(--accent-ink) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    display: inline-block;
-    padding: 0.1em 0.05em 0.25em;
+    display: block;
+    padding: 0.15em 0.05em 0;
     overflow: visible;
+    line-height: 1.25;
 }
 
 .hero-subtitle {
@@ -1703,8 +1704,8 @@ footer {
         margin-bottom: 1rem;
     }
 
-    .hero-name {
-        font-size: clamp(2.5rem, 6vw, 4rem);
+    .hero-name-zh {
+        font-size: clamp(3.2rem, 7.5vw, 5.5rem);
     }
 
     .hero-title {
@@ -1745,8 +1746,8 @@ footer {
         margin-bottom: 0.5rem;
     }
 
-    .hero-name {
-        font-size: clamp(2rem, 5vw, 3rem);
+    .hero-name-zh {
+        font-size: clamp(2.4rem, 6vw, 4rem);
     }
 
     .hero-title {

@@ -86,14 +86,15 @@
         observer.observe(el);
     });
 
-    var heroName = document.querySelector('.hero-name');
-    if (heroName) {
-        var text = heroName.textContent;
-        heroName.textContent = '';
+    var heroNameZh = document.querySelector('.hero-name-zh');
+
+    if (heroNameZh) {
+        var text = heroNameZh.textContent;
+        heroNameZh.textContent = '';
         var i = 0;
         function typeWriter() {
             if (i < text.length) {
-                heroName.textContent += text.charAt(i);
+                heroNameZh.textContent += text.charAt(i);
                 i++;
                 setTimeout(typeWriter, 90);
             }
